@@ -25,11 +25,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install numpy matplotlib numba PyMPDATA matplotlib-inline jupyter
 
-      - name: Set up Quarto
+      - name: Set up Quarto and TinyTeX
         uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Install TinyTeX (LaTeX for PDF)
-        uses: quarto-dev/quarto-actions/install-tinytex@v2
+        with:
+          tinytex: true
 
       - name: Render Quarto Report to PDF
         run: |
